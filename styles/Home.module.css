@@ -1,5 +1,10 @@
 .container {
   padding: 0 2rem;
+  background: #2d3436;
+}
+
+.container h1{
+  margin:0
 }
 
 .main {
