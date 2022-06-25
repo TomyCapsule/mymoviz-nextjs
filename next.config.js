@@ -3,4 +3,11 @@ const nextConfig = {
   reactStrictMode: true,
 }
 
-module.exports = nextConfig
+
+
+module.exports = {
+  reactStrictMode: true,
+  env: {
+    MOVIEDB_KEY: process.env.MOVIEDB_KEY
+  }
+}
