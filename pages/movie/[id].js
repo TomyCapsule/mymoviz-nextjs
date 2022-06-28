@@ -10,7 +10,7 @@ export default function Movie() {
     
   return (
     <Layout>
-        <Box component="div" className="flex flex-col w-2/3 mx-auto bg-slate-600 p-6 drop-shadow-2xl my-1 rounded">
+        <Box component="div" className="flex flex-col w-4/5 mx-auto p-6 drop-shadow-2xl my-1 rounded" sx={{background:'#303a47'}}>
             <MovieResume />
             <MovieCast movie_id={id}/>
         </Box>

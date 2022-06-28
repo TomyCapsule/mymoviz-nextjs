@@ -10,7 +10,6 @@ export default function MovieCards(props){
     let horizontalScrollRef = useRef(null);
 
     let handleScroll = e =>{
-        e.preventDefault();
         const container = horizontalScrollRef.current;
         const containerScrollPosition = horizontalScrollRef.current.scrollLeft;
 
