@@ -7,6 +7,7 @@ export const wishlistSlice = createSlice({
     },
     reducers:{
         initializeWishlist:(state,action)=>{
+            console.log('actionFromWishlistSlicer',action);
             state.value = [...action.payload];
         },
         addToWishlistInStore:(state,action)=>{

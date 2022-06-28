@@ -1,17 +1,16 @@
 import { Box } from "@mui/system";
-import {
-    createTheme,
-    responsiveFontSizes,
-    ThemeProvider,
-  } from '@mui/material/styles';
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import CancelIcon from '@mui/icons-material/Cancel';
 import Button from '@mui/material/Button';
-import {addToWishlist} from '../lib/movies';
-import {useState, useEffect} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
-import {addToWishlistInStore} from '../features/wishlist/wishlistSlice';
+import { addToWishlist } from '../lib/movies';
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { addToWishlistInStore } from '../features/wishlist/wishlistSlice';
+import { initMovieInfo } from "../features/movieslist/movieSlice";
+import Link from 'next/link';
+
 
 
 let theme = createTheme();
@@ -62,6 +61,9 @@ export default function HeroMovie({heromovie, fadeAnim, handleAnimation}){
                     <p className="mb-5">{`${heromovie.overview.slice(0,200)}...`}</p>
                     <p className="mb-5">Avis global: {heromovie.vote_average} / 10 {`(${heromovie.vote_count})`}</p>
                     <Button onClick={()=>handleAddMovie(heromovie.title,heromovie.backdrop_path)}>{icon}</Button>
+                    <Link href={`/movie/${heromovie.id}`}>
+                        <a onClick={()=>dispatch(initMovieInfo(heromovie))}>Voir la page</a>
+                    </Link>
                 </Box>    
             </Box>
         </>

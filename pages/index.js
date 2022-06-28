@@ -6,6 +6,7 @@ import React, {useEffect, useState} from 'react';
 import {getMovies, getWishlist} from '../lib/movies';
 import { useDispatch } from 'react-redux';
 import { initializeWishlist } from '../features/wishlist/wishlistSlice';
+import { initializeMoviesList } from '../features/movieslist/movieSlice';
 
 
 
@@ -24,8 +25,7 @@ export async function getStaticProps(){
 export default function App({movies,wishlist}) {
 
   useEffect(()=>{
-    dispatch(initializeWishlist(wishlist.wishlist))
-    console.log('movies',movies)
+    dispatch(initializeWishlist(wishlist.wishlist));
   },[])
 
   const [heromovie, setheromovie] = useState(movies[0]);

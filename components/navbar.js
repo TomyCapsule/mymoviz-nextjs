@@ -34,13 +34,16 @@ export default function Navbar() {
   const navbarWishlist = wishlistFromStore.map((elt,index)=>{
     return (
       <MenuItem key={index} className="hover:bg-slate-300" onClick={()=>handleDelete(elt.name)}>
-        <Card>
+        <Card className="relative">
           <CardMedia
             component="img"
             image={elt.img}
             alt={elt.name}
             sx={{width:"350px"}}
           />
+          <Typography variant="subtitle1" className="absolute bottom-0 left-0 mb-4 ml-4 text-white drop-shadow-3xl">
+            {elt.name}
+          </Typography>
         </Card>
       </MenuItem>
     )
