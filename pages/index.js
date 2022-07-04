@@ -10,7 +10,7 @@ import { initializeMoviesList } from '../features/movieslist/movieSlice';
 
 
 
-export async function getStaticProps(){
+export async function getServerSideProps(){
 
   const getMoviesFromAPI = await getMovies();
   const getWishlistFromAPI = await getWishlist();
