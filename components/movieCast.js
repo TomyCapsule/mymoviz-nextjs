@@ -27,7 +27,7 @@ export default function MovieCast(props) {
                         {elt.original_name}
                     </Typography>
                     <Typography variant="subtitle2" className="text-slate-400">
-                        {elt.character.split('/')[0]}
+                        {elt.character ? elt.character.split('/')[0] : "N/A"}
                     </Typography>
                 </Box>
             )

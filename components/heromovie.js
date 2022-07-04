@@ -36,7 +36,7 @@ export default function HeroMovie({heromovie, fadeAnim, handleAnimation}){
     let handleAddMovie = async (name,backdrop_path) => {
         let imgUrl = `https://image.tmdb.org/t/p/w500${backdrop_path}`;
         await addToWishlist(name,imgUrl);
-        dispatch(addToWishlistInStore({name,img: imgUrl}))
+        dispatch(addToWishlistInStore({name,img: imgUrl}));
         setLike(!like);
     }
 
@@ -49,11 +49,13 @@ export default function HeroMovie({heromovie, fadeAnim, handleAnimation}){
 
     return(
         <>
-            <Box component="div" className={`flex transition-opacity duration-500 ${fadeAnim ? 'opacity-0' : 'opacity-100'}`}>
+            <Box component="div" className={`flex transition-opacity duration-500 ${fadeAnim ? 'opacity-0' : 'opacity-100'} mt-1`}>
                
                 {/* Hero Movie poster */}
                 <Box component="div" className="ml-5 w-screen overflow-hidden" sx={{height:'80vh'}}>
-                    <Box component="img" className="min-w-full min-h-full overflow-hidden" src={`https://image.tmdb.org/t/p/original/${heromovie.backdrop_path}`}/>     
+                    <Link href={`/movie/${heromovie.id}`}>
+                        <Box onClick={()=>dispatch(initMovieInfo(heromovie))} component="img" className="rounded-md min-w-full min-h-full overflow-hidden hover:cursor-pointer" src={`https://image.tmdb.org/t/p/original/${heromovie.backdrop_path}`}/>     
+                    </Link>
                 </Box>     
                 <Box component='div' className="flex flex-col min-h-full ml-4 text-white" 
                     sx={{width:'30%'}}>

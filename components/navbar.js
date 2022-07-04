@@ -8,7 +8,6 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import {useSelector,useDispatch} from 'react-redux';
 import { deleteFromWishlistInStore } from '../features/wishlist/wishlistSlice';
