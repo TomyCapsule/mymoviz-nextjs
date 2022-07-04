@@ -2,7 +2,6 @@ import * as React from 'react';
 import {useRef} from 'react';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
 import { Box } from "@mui/system";
 
 export default function MovieCards(props){

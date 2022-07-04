@@ -1,4 +1,3 @@
-import styles from '../styles/Home.module.css';
 import Layout from '../components/layout';
 import HeroMovie from '../components/heromovie';
 import MovieCards from '../components/moviecards';
@@ -6,8 +5,6 @@ import React, {useEffect, useState} from 'react';
 import {getMovies, getWishlist} from '../lib/movies';
 import { useDispatch } from 'react-redux';
 import { initializeWishlist } from '../features/wishlist/wishlistSlice';
-import { initializeMoviesList } from '../features/movieslist/movieSlice';
-
 
 
 export async function getServerSideProps(){

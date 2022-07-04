@@ -50,7 +50,7 @@ export default function Navbar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{bgcolor:'#2d3436'}}>
+      <AppBar position="static" sx={{bgcolor:'#2d3436', minHeight:"30px"}}>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             MyMoviz
